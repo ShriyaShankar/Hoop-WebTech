@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sports Forum</title>
+        <style>
+            div
+            {
+                background-color:crimson;
+                width: 250px;
+                border: 1px rgb(247, 238, 243);
+                padding: 1px;
+                margin: auto;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h3 style="text-align: center; color: bisque;">Username<br><input id="username" type="text" name="Username" placeholder="Enter Username"><br><br>
+            Password<br><input id="password" type="password" name="Password" placeholder="Enter Password"><br></h3>
+            <input type="submit" value="Login" onclick="login()"><br><br>
+        </div>
+    </body>
+
+    <script>
+        function login()
+        {
+            var username = document.getElementById(username);
+            var password = document.getElementById(password);
+            if(username==password)
+            {
+                alert("Login Successful");
+            }
+        }
+    </script>
+</html>
