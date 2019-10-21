@@ -1,36 +1,106 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Sports Forum</title>
         <style>
-            div
+            body{
+                background-color: white; 
+                background-image: url('bg3.jpg'); 
+                background-repeat: no-repeat;
+                background-attachment: fixed; 
+                background-size: cover;
+            }
+            .login
             {
                 background-color:crimson;
-                width: 250px;
+                position: absolute;
+                top: 120px;
+                right: 100px;
+                width: 300px;
+                height: 390px;
                 border: 1px rgb(247, 238, 243);
                 padding: 1px;
                 margin: auto;
                 text-align: center;
+                align-content: center;
+                display: block;
+                opacity: 0.92;
+            }
+            .button {
+                background-color: rgb(252, 242, 190);
+                border: none;
+                padding: 8px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 12px;
+                margin: 4px 2px;
+                cursor: pointer;
+                color: black;
+                }
+
+            .h31{
+                text-align: center; 
+                color: bisque;
+                position: relative;
+                align-content: center;
+            }
+            .about{
+                text-align: justify;
+                color: black;
+                align-content: center;
+                top: 45px;
+                font-size: 24px;
+                left: 50px;
             }
         </style>
     </head>
     <body>
-        <div>
-            <h3 style="text-align: center; color: bisque;">Username<br><input id="username" type="text" name="Username" placeholder="Enter Username"><br><br>
-            Password<br><input id="password" type="password" name="Password" placeholder="Enter Password"><br></h3>
-            <input type="submit" value="Login" onclick="login()"><br><br>
+        <div class="about">
+            SPORTS FORUM 101<br>
+            An integrated community for all athletes and <br>
+            to find out about or promote tournaments being<br>
+            hosted in their respective colleges.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco <br>
+            laboris nisi ut aliquip ex ea commodo consequat. <br>
+            Duis aute irure dolor in reprehenderit in voluptate velit <br>
+            esse cillum dolore eu fugiat nulla pariatur. <br>
+            Excepteur sint occaecat cupidatat non proident, <br>
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <div class="login"> 
+            <form action="">
+                
+                <h3 class="h31">LOGIN TO THE FORUM<br><br>
+                Username<br><input id="username" type="text" name="Username" placeholder="Enter Username"><br><br>
+                Password<br><input id="password" type="password" name="Password" placeholder="Enter Password"><br></h3>
+                <a id="login" class="button" onclick="login()"> SUBMIT </a><br><br>
+            </form>
+            </div>
         </div>
-    </body>
 
-    <script>
-        function login()
-        {
-            var username = document.getElementById(username);
-            var password = document.getElementById(password);
-            if(username==password)
+        <script>
+            function login()
             {
-                alert("Login Successful");
+                var username = document.getElementById("username");
+                var password = document.getElementById("password");
+                //console.log(password);
+                if(username.value == '' || password.value == '')
+                {
+                    alert("Please enter details");
+                }
+                else if(username.value==password.value)
+                {
+                    alert("Login successful");
+                    document.getElementById("login").href = 'home.html';
+                }
+                else{
+                    alert("Password is incorrect. Please enter password again");
+                    document.location.reload();
+                }
             }
-        }
-    </script>
+        </script>
+    </body>
 </html>
