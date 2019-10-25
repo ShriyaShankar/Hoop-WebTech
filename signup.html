@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Register
+        </title>
+        <style>
+        
+        </style>
+    </head>
+    <body id="body" style="background-color:paleturquoise;">
+        <form action="">
+            Name: <input id="name" type="text"><br>
+            Email: <input type="email" value="email"><br>
+            DOB: <input type="date"><br><hr>
+            College:
+            <select>
+                <option value="C1">College 1</option>
+                <option value="C2">College 2</option>
+                <option value="C3">College 3</option>
+            </select>
+            <br><br>
+            Course:
+            <select>
+                <option value="btech">B. Tech</option>
+                <option value="barch">B. Arch</option>
+                <option value="bba">BBA</option>
+            </select><br>
+            Semester: <input type="number" max="8" min="1"><br>            
+            <hr>
+            Create password: <input type="password" id="p1"><br>
+            Confirm password: <input type="password" id="p2">
+
+            <input type="submit" id="sub" value="Register" onclick="signup()">
+        </form>
+    </body>
+    <script>
+        function signup()
+        {
+            var p1 = document.getElementById("p1");
+            var p2 = document.getElementById("p2");
+            if(p1.value==p2.value)
+            {
+                alert("Registration completed");
+            }
+            else
+            {
+                alert("Passwords do not match. Enter again");
+                document.location.reload();
+            }
+        }
+    </script>
+</html>
