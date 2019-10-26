@@ -44,7 +44,7 @@
         </style>
     </head>
     <body id="body">
-        <form class="signup" action="">
+        <form class="signup" action="db.php" method="POST">
             Name: <input id="name" placeholder="Enter name" type="text"><br><br>
             Student Registration Number : <input type="text" id="srn"   placeholder="Enter Reg no."><br><br>
             Email: <input type="email" placeholder="Enter email"><br><br>
@@ -75,7 +75,7 @@
             Create password: <input type="password" id="p1"><br><br>
             Confirm password: <input type="password" id="p2">
             <br><br>
-            <input type="submit" id="sub" value="Register" onclick="signup()">
+            <input type="submit" id="submit" value="Register">
         
         <br>
         <p style="position: relative;">Already have an account? 
