@@ -5,14 +5,54 @@
             Register
         </title>
         <style>
-        
+            #body{
+                background-color: rgb(247, 241, 236);
+                background-image: url('bg3.jpg'); 
+                background-repeat: no-repeat;
+                background-attachment: fixed; 
+                background-size: cover;
+            }
+            .signup{
+                background-color: rgba(183, 247, 177, 0.945);
+                opacity: 0.8;
+                border: 2px solid;
+                border-color: black;
+                margin: 20%;
+                margin-top: 5%;
+                margin-bottom:5%;
+                align-content: center;
+                color:maroon;
+                padding:20px;
+                text-align: justify;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 20px;
+                position:absolute top;
+            }
+            #sub{
+                background-color:red;
+                border: none;
+                padding: 8px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 12px;
+                margin: 4px 2px;
+                cursor: pointer;
+                color:white;
+                align-self: center;
+            }
         </style>
     </head>
-    <body id="body" style="background-color:paleturquoise;">
-        <form action="">
-            Name: <input id="name" type="text"><br>
-            Email: <input type="email" value="email"><br>
-            DOB: <input type="date"><br><hr>
+    <body id="body">
+        <form class="signup" action="">
+            Name: <input id="name" placeholder="Enter name" type="text"><br><br>
+            Student Registration Number : <input type="text" id="srn"   placeholder="Enter Reg no."><br><br>
+            Email: <input type="email" placeholder="Enter email"><br><br>
+            DOB: <input type="date"><br><br>
+            Gender:
+            <input type="radio" id="male" value="Male">Male
+            <input type="radio" id="female" value="Female">Female
+            <input type="radio" id="nonbin" value="Other">Other<hr>
             College:
             <select>
                 <option value="C1">College 1</option>
@@ -25,28 +65,42 @@
                 <option value="btech">B. Tech</option>
                 <option value="barch">B. Arch</option>
                 <option value="bba">BBA</option>
-            </select><br>
-            Semester: <input type="number" max="8" min="1"><br>            
+            </select><br><br>
+            Semester: <input id="sem" type="number" max="8" min="1"><br><br>   
+            Sport(s): <br><br>
+            <input type="checkbox" id="sp1" value="Basketball">Basketball
+            <input type="checkbox" id="sp2" value="Throwball">Throwball
+            <input type="checkbox" id="sp3" value="Football">Football
             <hr>
-            Create password: <input type="password" id="p1"><br>
+            Create password: <input type="password" id="p1"><br><br>
             Confirm password: <input type="password" id="p2">
-
+            <br><br>
             <input type="submit" id="sub" value="Register" onclick="signup()">
-        </form>
+        
+        <br>
+        <p style="position: relative;">Already have an account? 
+        <a href="login.html">Login</a></p>
+    </form>
     </body>
     <script>
         function signup()
         {
             var p1 = document.getElementById("p1");
             var p2 = document.getElementById("p2");
-            if(p1.value==p2.value)
-            {
-                alert("Registration completed");
-            }
-            else
+            var sem = document.getElementById("sem");
+            if((p1.value!=p2.value))
             {
                 alert("Passwords do not match. Enter again");
                 document.location.reload();
+                
+            }
+            else if(sem.value<1 || sem.value>8)
+            {
+                alert("Semester entered is incorrect");
+            }
+            else
+            {   
+                alert("Registration completed");
             }
         }
     </script>
