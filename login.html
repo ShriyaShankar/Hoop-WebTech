@@ -57,7 +57,7 @@
         </style>
     </head>
     <body>
-        <div class="about">
+            <div class="about">
             SPORTS FORUM 101<br>
             An integrated community for all athletes and <br>
             to find out about or promote tournaments being<br>
@@ -92,6 +92,7 @@
                 if(username.value == '' || password.value == '')
                 {
                     alert("Please enter details");
+                    document.getElementById("login").href = 'login.html';
                 }
                 else if(username.value==password.value)
                 {
@@ -103,6 +104,11 @@
                     document.location.reload();
                 }
             }
-        </script>
+        </script> 
+    
+
+      <!--  <script src="js/login2.js"></script> -->
+
+      
     </body>
 </html>
