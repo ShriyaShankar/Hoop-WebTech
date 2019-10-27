@@ -49,7 +49,7 @@
             echo("<script>swal({
                   icon: 'success',
                   title: 'Congratulations!',
-                  text: 'You are now a user of SportsForum',
+                  text: 'You have successfully created a torunament',
                   button: 'OK',
                   closeOnClickOutside: false
             }).then(function(){window.location='login.html'});</script>");
