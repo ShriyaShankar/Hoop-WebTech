@@ -48,7 +48,30 @@
         VALUES ('$name', '$srn', '$email', '$dob', '$gender', '$college','$course', '$semester', '$sports')";
         echo "Record submitted. ";
 
-
+        if ($conn->query($sql) === TRUE)
+        {
+            echo "Redirecting... ";
+            echo("<script>swal({
+                  icon: 'success',
+                  title: 'Congratulations!',
+                  text: 'You are a great citizen! Thanks for the submission :',
+                  button: 'OK',
+                  closeOnClickOutside: false
+            }).then(function(){window.location='main.php'});</script>");
+        }
+        
+        // Error message for unsuccessful attempt
+        else
+        {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo("<script>swal({
+                  icon: 'error',
+                  title: 'Oops!',
+                  text: 'There's an error on our end :(. Contact us!',
+                  button: 'OK',
+                  closeOnClickOutside: false
+            }).then(function(){window.location='main.php'});</script>");
+        }
         // Close connection
         $conn->close();
 
