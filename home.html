@@ -1,43 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Welcome</title>
-        <link rel="stylesheet" href="css/theme1.css">
-        <link rel="stylesheet" href="css/theme2.css">
-        <link rel="stylesheet" href="css/theme3.css">
-        <script src="js/calendar.js"></script>
+        <title>SportsForum</title>
+        <script type="text/javascript" src="home.js"></script>
+        <link rel="stylesheet" type="text/css" href="home.css">
     </head>
-
     <body>
-           <script>
-
-                var events = [
-                    {'Date': new Date(2016, 6, 7), 'Title': 'Doctor appointment at 3:25pm.'},
-                    {'Date': new Date(2016, 6, 18), 'Title': 'New Garfield movie comes out!', 'Link': 'https://garfield.com'},
-                    {'Date': new Date(2016, 6, 27), 'Title': '25 year anniversary', 'Link': 'https://www.google.com.au/#q=anniversary+gifts'},
-                ];
-
-                var settings = {
-                    Color: '',
-                    LinkColor: '',
-                    NavShow: true,
-                    NavVertical: false,
-                    NavLocation: '',
-                    DateTimeShow: true,
-                    DateTimeFormat: 'mmm, yyyy',
-                    DatetimeLocation: '',
-                    EventClick: '',
-                    EventTargetWholeDay: false,
-                    DisabledDays: [],
-                    ModelChange: model
-                };
-            </script>
-
-            <div id="calendar">
-                    <script>
-                        var element = document.getElementById('calendar');
-                        calendar(element, events, settings);
-                    </script>
-            </div>
+        <div id="calendar">
+            <p id="calendar-day"></p>
+            <p id="calendar-date"></p>
+            <p id="calendar-month-year"></p>
+        </div>
     </body>
 </html>
