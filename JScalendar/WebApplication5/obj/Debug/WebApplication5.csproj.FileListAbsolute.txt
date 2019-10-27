@@ -1,0 +1,5 @@
+E:\YoutubeDemo\WebApplication5\WebApplication5\bin\WebApplication5.dll
+E:\YoutubeDemo\WebApplication5\WebApplication5\bin\WebApplication5.pdb
+E:\YoutubeDemo\WebApplication5\WebApplication5\obj\Debug\WebApplication5.csprojResolveAssemblyReference.cache
+E:\YoutubeDemo\WebApplication5\WebApplication5\obj\Debug\WebApplication5.dll
+E:\YoutubeDemo\WebApplication5\WebApplication5\obj\Debug\WebApplication5.pdb
