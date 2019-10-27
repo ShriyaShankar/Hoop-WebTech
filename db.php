@@ -54,7 +54,7 @@
             echo("<script>swal({
                   icon: 'success',
                   title: 'Congratulations!',
-                  text: 'You are now a user SportsForum :',
+                  text: 'You are now a user SportsForum',
                   button: 'OK',
                   closeOnClickOutside: false
             }).then(function(){window.location='login.php'});</script>");
