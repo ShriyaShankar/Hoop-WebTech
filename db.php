@@ -32,8 +32,6 @@
     }
 
     // Form values are mapped to database fields
-    if(isset($_POST['submit']))
-    {
      
         $name=$_POST['name'];
         $srn=$_POST['srn'];
@@ -53,5 +51,5 @@
 
         // Close connection
         $conn->close();
-    }
+
 ?>
