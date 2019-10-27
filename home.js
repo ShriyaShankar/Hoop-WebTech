@@ -1,22 +1,24 @@
-//this function will find today's date
-function calendar(){
-    var day=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    var month=['January','February','March','April','May','June','July','August','September','October','November','December'];
-    var d=new Date();
-    setText('calendar-day', day[d.getDay()]);
-    setText('calendar-date', d.getDate());
-    setText('calendar-month-year', month[d.getMonth()]+' '+(1900+d.getYear()));
-};
+var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-//this function will set the text value of 
+    function drawCalendarMonths()
+    {
+        for(var i = 0; i < months.length; i++)
+        {
+            var doc = document.createElement("div");
+            doc.innerHTML = months[i];
+            doc.classList.add("dropdown-item");
 
- tags
-function setText(id, val){
-    if(val < 10){
-        val = '0' + val;    //add leading 0 if val < 10
+            doc.onclick = (function () {
+                var selectedMonth = i;
+                return function ()
+                {
+                    month = selectedMonth;
+                    document.getElementById("curMonth").innerHTML = months[month];
+                    loadCalendarDays();
+                    return month;
+                }
+            })();
+
+            document.getElementById("months").appendChild(doc);
+        }
     }
-    document.getElementById(id).innerHTML = val;
-};
-
-//call calendar() when page load
-window.onload = calendar;
