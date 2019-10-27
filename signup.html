@@ -46,13 +46,13 @@
     <body id="body">
         <form class="signup" action="db.php" method="POST">
             Name: <input id="name" placeholder="Enter name" type="text"><br><br>
-            Student Registration Number : <input type="text" id="srn"   placeholder="Enter Reg no."><br><br>
+            Student Registration Number : <input type="text" id="srn" name="srn"  placeholder="Enter Reg no."><br><br>
             Email: <input name="email" type="email" placeholder="Enter email"><br><br>
-            DOB: <input id="dob" type="date"><br><br>
+            DOB: <input id="dob" name="dob" type="date"><br><br>
             Gender:
-            <input type="radio" id="male" value="gender">Male
-            <input type="radio" id="female" value="gender">Female
-            <input type="radio" id="nonbin" value="gender">Other<hr>
+            <input type="radio" id="male" value="gender" name="gender">Male
+            <input type="radio" id="female" value="gender" name="gender">Female
+            <input type="radio" id="nonbin" value="gender" name="gender">Other<hr>
             College:
             <select name="college">
                 <option value="C1">College 1</option>
@@ -66,11 +66,11 @@
                 <option value="barch">B. Arch</option>
                 <option value="bba">BBA</option>
             </select><br><br>
-            Semester: <input id="semester" type="number" max="8" min="1"><br><br>   
+            Semester: <input id="semester" name="semester" type="number" max="8" min="1"><br><br>   
             Sport(s): <br><br>
-            <input type="checkbox" id="sp1" value="sports">Basketball
-            <input type="checkbox" id="sp2" value="sports">Throwball
-            <input type="checkbox" id="sp3" value="sports">Football
+            <input type="checkbox" id="sp1" value="sports" name="sports">Basketball
+            <input type="checkbox" id="sp2" value="sports" name="sports">Throwball
+            <input type="checkbox" id="sp3" value="sports" name="sports">Football
             <hr>
             Create password: <input type="password" id="p1"><br><br>
             Confirm password: <input type="password" id="p2">
