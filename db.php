@@ -13,8 +13,8 @@
 
     // Credentials to access MySQL database
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "sportsforum";
+    $password = "sp0rtsf0rum";
     $dbname = "sportsforum";
     //$table = "data";
     $table = "registration";
@@ -38,7 +38,7 @@
         $name=$_POST['name'];
         $srn=$_POST['srn'];
         $email=$_POST['email'];
-        $dob=ucfirst($_POST['dob']);
+        $dob=$_POST['dob'];
         $gender=$_POST['gender'];
         $college=$_POST['college'];
         $course = $_POST['course'];
@@ -48,34 +48,9 @@
         // Query to insert values into database
         $sql = "INSERT INTO registration (Name, SRN, Email, DOB, Gender, College, Course, Semester, Sports)
         VALUES ('$name', '$srn', '$email', '$dob', '$gender', '$college','$course', '$semester', '$sports')";
-        echo "Record submitted. ";
+      //  echo "Record submitted. ";
 
-        // For successful record submission, display message
-        if ($conn->query($sql) === TRUE)
-        {
-            echo "Redirecting... ";
-            echo("<script>swal({
-                  icon: 'success',
-                  title: 'Congratulations!',
-                  text: 'You are a great citizen! Thanks for the submission :',
-                  button: 'OK',
-                  closeOnClickOutside: false
-            }).then(function(){window.location='main.php'});</script>");
-        }
-        
-        // Error message for unsuccessful attempt
-        else
-        {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-            echo("<script>swal({
-                  icon: 'error',
-                  title: 'Oops!',
-                  text: 'There's an error on our end :(. Contact us!',
-                  button: 'OK',
-                  closeOnClickOutside: false
-            }).then(function(){window.location='main.php'});</script>");
-        }
-        
+
         // Close connection
         $conn->close();
     }
