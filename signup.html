@@ -45,30 +45,31 @@
     </head>
     <body id="body">
         <form class="signup" action="db.php" method="POST" enctype="multipart/form-data">
-            Name: <input id="name" name="name" placeholder="Enter name" type="text"><br><br>
-            Student Registration Number : <input type="text" id="srn" name="srn"  placeholder="Enter Reg no."><br><br>
-            Email: <input name="email" type="email" placeholder="Enter email"><br><br>
-            DOB: <input id="dob" name="dob" type="date"><br><br>
+
+            Name: <input id="name" name="name" placeholder="Enter name" type="text" required><br><br>
+            Student Registration Number : <input type="text" id="srn" name="srn"  placeholder="Enter Reg no." required><br><br>
+            Email: <input name="email" type="email" placeholder="Enter email" required><br><br>
+            DOB: <input id="dob" name="dob" type="date" required><br><br>
             Gender:
-            <input type="radio" id="male" value="gender" name="gender">Male
+            <input type="radio" id="male" value="gender" name="gender" required>Male
             <input type="radio" id="female" value="gender" name="gender">Female
             <input type="radio" id="nonbin" value="gender" name="gender">Other<hr>
             College:
-            <select name="college">
+            <select name="college" required>
                 <option value="C1">College 1</option>
                 <option value="C2">College 2</option>
                 <option value="C3">College 3</option>
             </select>
             <br><br>
             Course:
-            <select name="course">
+            <select name="course" required>
                 <option value="btech">B. Tech</option>
                 <option value="barch">B. Arch</option>
                 <option value="bba">BBA</option>
             </select><br><br>
-            Semester: <input id="semester" name="semester" type="number" max="8" min="1"><br><br>   
+            Semester: <input id="semester" name="semester" type="number" max="8" min="1" required><br><br>   
             Sport(s): <br><br>
-            <input type="checkbox" id="sp1" value="sports" name="sports">Basketball
+            <input type="checkbox" id="sp1" value="sports" name="sports" required>Basketball
             <input type="checkbox" id="sp2" value="sports" name="sports">Throwball
             <input type="checkbox" id="sp3" value="sports" name="sports">Football
             <hr>
