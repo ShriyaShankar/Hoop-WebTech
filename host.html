@@ -5,12 +5,50 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="main.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <script src="home.js"></script>
+        <script src="main.js"></script>
     </head>
     <body id="body">
-        Host
+        <h2>You're only a few clicks away!</h2>
+        <form action="host_action.php" method="POST" enctype="multipart/form-data">
+
+            <div class="row1">
+                
+                <div class="col-lg-3">
+                    <h3>Pick a sport</h3>
+                    <select name="sport" id="sport" required>
+                        <option>Basketball</option>
+                        <option>Throwball</option>
+                        <option>Football</option>
+                    </select>
+                </div>
+
+
+                <div class="col-lg-3">
+                        <h3>Select host college</h3>
+                        <select name="college" id="college" required>
+                            <option>PES University</option>
+                            <option>RV College of Engineering</option>
+                            <option>BMS College of Engineering</option>
+                            <option>MSRIT</option>
+                            <option>Reva University</option>
+                        </select>
+                </div>
+
+                <div class="col-lg-3">
+                        <h3>Select start date</h3>
+                        <input name="startdate" id="startdate" type="date"required>
+                </div>
+
+                <div class="col-lg-3">
+                        <h3>Select end date</h3>
+                        <input name="enddate" id="enddate" type="date" required>
+                </div>
+                <input type="submit" id="go" value="Go">
+            </div>
+            
+        </form>
     </body>
 </html>
