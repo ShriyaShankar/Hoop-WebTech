@@ -9,14 +9,7 @@
     </head>
 
     <body>
-            <div id="caleandar">
-                <script>
-                    var element = document.getElementById('caleandar');
-                    caleandar(element, events, settings);
-                </script>
-            </div>
-
-            <script>
+           <script>
 
                 var events = [
                     {'Date': new Date(2016, 6, 7), 'Title': 'Doctor appointment at 3:25pm.'},
@@ -39,5 +32,12 @@
                     ModelChange: model
                 };
             </script>
+
+            <div id="caleandar">
+                    <script>
+                        var element = document.getElementById('caleandar');
+                        caleandar(element, events, settings);
+                    </script>
+            </div>
     </body>
 </html>
