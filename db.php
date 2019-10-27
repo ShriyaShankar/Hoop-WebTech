@@ -54,10 +54,10 @@
             echo("<script>swal({
                   icon: 'success',
                   title: 'Congratulations!',
-                  text: 'You are a great citizen! Thanks for the submission :',
+                  text: 'You are now a user SportsForum :',
                   button: 'OK',
                   closeOnClickOutside: false
-            }).then(function(){window.location='main.php'});</script>");
+            }).then(function(){window.location='login.php'});</script>");
         }
         
         // Error message for unsuccessful attempt
@@ -70,7 +70,7 @@
                   text: 'There's an error on our end :(. Contact us!',
                   button: 'OK',
                   closeOnClickOutside: false
-            }).then(function(){window.location='main.php'});</script>");
+            }).then(function(){window.location='login.php'});</script>");
         }
         // Close connection
         $conn->close();
