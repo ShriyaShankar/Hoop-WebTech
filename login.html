@@ -4,45 +4,58 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Sports Forum</title>
         <style>
-            body{
-                background-color: white; 
-                background-image: url('bg3.jpg'); 
+            .header{
+                background-color: rgba(182, 236, 182, 0.822);
+                opacity:0.9;
+                margin: auto;
+                width: auto;
+                background-attachment: fixed;
+                background-size: cover;
+                color: black;
+                text-align: center;
+                font-family:cursive;
+                font-size:75px;
+                height: 150px;
+            }
+            .bod{
+                background-image: url('bg4.jpg'); 
                 background-repeat: no-repeat;
                 background-attachment: fixed; 
                 background-size: cover;
             }
             .login
             {
-                background-color:crimson;
-                position: absolute;
+                background-color: rgba(247, 217, 177, 0.945);
+                position:sticky;
                 top: 120px;
                 right: 100px;
                 width: 300px;
-                height: 390px;
+                height: 375px;
                 border: 1px rgb(247, 238, 243);
                 padding: 1px;
                 margin: auto;
+                float: right;
                 text-align: center;
                 align-content: center;
                 display: block;
-                opacity: 0.92;
+                opacity: 0.81;
             }
             .button {
-                background-color: rgb(252, 242, 190);
+                background-color: rgb(68, 6, 6);
                 border: none;
                 padding: 8px 25px;
                 text-align: center;
-                text-decoration: none;
                 display: inline-block;
                 font-size: 12px;
                 margin: 4px 2px;
                 cursor: pointer;
-                color: black;
+                color: white;
+                text-decoration: none;
                 }
 
             .h31{
                 text-align: center; 
-                color: bisque;
+                color: black;
                 position: relative;
                 align-content: center;
             }
@@ -56,9 +69,13 @@
             }
         </style>
     </head>
-    <body>
+    <body class="bod">
+            <div class="header">
+                HOOP - A SPORTS FORUM
+            </div>
+            <br><br>
             <div class="about">
-            SPORTS FORUM 101<br>
+            <!--SPORTS FORUM 101<br>
             An integrated community for all athletes and <br>
             to find out about or promote tournaments being<br>
             hosted in their respective colleges.<br>
@@ -69,18 +86,15 @@
             Duis aute irure dolor in reprehenderit in voluptate velit <br>
             esse cillum dolore eu fugiat nulla pariatur. <br>
             Excepteur sint occaecat cupidatat non proident, <br>
-            sunt in culpa qui officia deserunt mollit anim id est laborum.
-            <div class="login"> 
-            <form action="">
-                
-                <h3 class="h31">LOGIN TO THE FORUM<br><br>
+            sunt in culpa qui officia deserunt mollit anim id est laborum.-->
+            <form class="login" action="">
+                <h3 class="h31">LOGIN<br><br>
                 Username/Email<br><input id="username" type="text" name="Username" placeholder="Enter Username"><br><br>
                 Password<br><input id="password" type="password" name="Password" placeholder="Enter Password"><br></h3>
                 <input type="button" id="login" value= "LOGIN" class="button" onclick="login()"></a>
-                <a id="register" class="button" href="signup.html"><strong>REGISTER</strong></a>
+                <a id="register" class="button" href="signup.html">REGISTER</a>
                 <br>
             </form>
-            </div>
         </div>
 
         <script>
