@@ -1,11 +1,12 @@
 function hostTournament(){
-    window.location="host.html";
+    window.location = "host.html";
 }
 
 function joinTournament(){
-    window.location="join.html";
+    window.location = "join.php";
 }
 
 function editTournament(){
-    window.location="edit.html";
+    window.location = "edit.html";
 }
+
