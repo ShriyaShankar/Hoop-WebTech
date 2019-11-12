@@ -3,101 +3,30 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Sports Forum</title>
-        <style>
-            .header{
-                background-color: rgba(182, 236, 182, 0.822);
-                opacity:0.9;
-                margin: auto;
-                width: auto;
-                background-attachment: fixed;
-                background-size: cover;
-                color: black;
-                text-align: center;
-                font-family:cursive;
-                font-size:75px;
-                height: 150px;
-            }
-            .bod{
-                background-image: url('bg4.jpg'); 
-                background-repeat: no-repeat;
-                background-attachment: fixed; 
-                background-size: cover;
-            }
-            .login
-            {
-                background-color: rgba(247, 217, 177, 0.945);
-                position:sticky;
-                top: 120px;
-                right: 100px;
-                width: 300px;
-                height: 375px;
-                border: 1px rgb(247, 238, 243);
-                padding: 1px;
-                margin: auto;
-                float: right;
-                text-align: center;
-                align-content: center;
-                display: block;
-                opacity: 0.81;
-            }
-            .button {
-                background-color: rgb(68, 6, 6);
-                border: none;
-                padding: 8px 25px;
-                text-align: center;
-                display: inline-block;
-                font-size: 12px;
-                margin: 4px 2px;
-                cursor: pointer;
-                color: white;
-                text-decoration: none;
-                }
-
-            .h31{
-                text-align: center; 
-                color: black;
-                position: relative;
-                align-content: center;
-            }
-            .about{
-                text-align: justify;
-                color: black;
-                align-content: center;
-                top: 45px;
-                font-size: 24px;
-                left: 50px;
-            }
-        </style>
+        <link rel="stylesheet" href="login.css">
     </head>
     <body class="bod">
             <div class="header">
-                HOOP - A SPORTS FORUM
+                HOOP
             </div>
-            <br><br>
-            <div class="about">
-            <!--SPORTS FORUM 101<br>
-            An integrated community for all athletes and <br>
-            to find out about or promote tournaments being<br>
-            hosted in their respective colleges.<br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco <br>
-            laboris nisi ut aliquip ex ea commodo consequat. <br>
-            Duis aute irure dolor in reprehenderit in voluptate velit <br>
-            esse cillum dolore eu fugiat nulla pariatur. <br>
-            Excepteur sint occaecat cupidatat non proident, <br>
-            sunt in culpa qui officia deserunt mollit anim id est laborum.-->
             <form class="login" action="">
                 <h3 class="h31">LOGIN<br><br>
-                Username/Email<br><input id="username" type="text" name="Username" placeholder="Enter Username"><br><br>
+                Email<br><input id="username" type="text" name="Username" placeholder="Enter Username"><br><br>
                 Password<br><input id="password" type="password" name="Password" placeholder="Enter Password"><br></h3>
-                <input type="button" id="login" value= "LOGIN" class="button" onclick="login()"></a>
+                <input type="button" id="login" value= "LOGIN" class="button"></a>
                 <a id="register" class="button" href="signup.html">REGISTER</a>
                 <br>
             </form>
-        </div>
-
+            <br><br>
+            <div class="about">
+                    Hoop is an integrated community for all athletes and to find out about or promote tournaments being
+                    hosted in their respective colleges, We at Hoop, pride ourselves on being easily accessible
+                    and transparent.
+                    <br><br><br>
+            </div> 
         <script>
+            var a = document.getElementById("login");
+            a.addEventListener("click",login,false);
             function login()
             {
                 var username = document.getElementById("username");
@@ -111,7 +40,7 @@
                 else if(username.value==password.value)
                 {
                     alert("Login successful");
-                    document.getElementById("login").href = 'home.html';
+                    window.location.href = "home.html";
                 }
                 else{
                     alert("Password is incorrect. Please enter password again");

@@ -1,5 +1,5 @@
 .button1 {
-    background-color: rgb(1, 41, 1); /* Green */
+    background-color: rgb(19, 13, 75); /* Blue */
     border: none;
     color: white;
     padding: 30px 100px;
@@ -12,8 +12,9 @@
     width: 70%;
 }
 .button1:hover {
-    background-color: #4CAF50; /* Green */
+    background-color: rgb(54, 170, 179); /* Blue */
     color: white;
+    text-decoration: none;
 }
 
 .row1{
@@ -23,7 +24,7 @@
 }
 
 #go{
-    background-color: rgb(9, 43, 156); /* Green */
+    background-color: rgb(9, 43, 156); /* Blue */
     border: none;
     color: white;
     padding: 20px 20px;
@@ -54,6 +55,7 @@
 }
 
 li{
+    display: inline;
     float: left;
 }
  
@@ -67,12 +69,29 @@ li a{
 
 li a:hover{
     background-color:lightblue;
+    text-decoration: none;
 }
 
 li a:active{
-    backgroud-color: red;
+    background-color: lightblue;
 }
 
+#litext{
+    text-align: center; 
+    color: white;
+    position: fixed;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#litext:hover{
+    color:lightblue;
+}
 /*#college, #sport{
 
 }*/
