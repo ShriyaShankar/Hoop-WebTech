@@ -44,7 +44,7 @@
         $sports = $_POST['sports'];
        
         // Query to insert values into database
-        $sql = "INSERT INTO registration (Name, SRN, Email, DOB, Gender, College, Course, Semester, Sports)
+         =$sql "INSERT INTO registration (Name, SRN, Email, DOB, Gender, College, Course, Semester, Sports)
         VALUES ('$name', '$srn', '$email', '$dob', '$gender', '$college','$course', '$semester', '$sports')";
         echo "Record submitted. ";
 

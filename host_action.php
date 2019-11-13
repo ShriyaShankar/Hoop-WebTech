@@ -52,7 +52,7 @@
                   text: 'You have successfully created a torunament',
                   button: 'OK',
                   closeOnClickOutside: false
-            }).then(function(){window.location='login.html'});</script>");
+            }).then(function(){window.location='home.html'});</script>");
         }
         
         // Error message for unsuccessful attempt
@@ -65,7 +65,7 @@
                   text: 'There's an error on our end :(. Contact us!',
                   button: 'OK',
                   closeOnClickOutside: false
-            }).then(function(){window.location='login.html'});</script>");
+            }).then(function(){window.location='home.html'});</script>");
         }
         // Close connection
         $conn->close();
