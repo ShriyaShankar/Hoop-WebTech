@@ -31,7 +31,7 @@
             echo "</br>";
         }
     } else {
-        echo "0 results";
+        echo "There are no upcoming tournaments";
     }
 
     //Close connection

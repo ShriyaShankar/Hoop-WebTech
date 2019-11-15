@@ -9,10 +9,10 @@
             <div class="header">
                 HOOP
             </div>
-            <form class="login" action="">
+            <form class="login" action="" onsubmit="login.php" method="POST">
                 <h3 class="h31">LOGIN<br><br>
-                Email<br><input id="username" type="text" name="Username" placeholder="Enter Username"><br><br>
-                Password<br><input id="password" type="password" name="Password" placeholder="Enter Password"><br></h3>
+                Email<br><input id="username" type="text" name="email" placeholder="Enter Username"><br><br>
+                Password<br><input id="password" type="password" name="password" placeholder="Enter Password"><br></h3>
                 <input type="button" id="login" value= "LOGIN" class="button"></a>
                 <a id="register" class="button" href="signup.html">REGISTER</a>
                 <br>
@@ -37,6 +37,7 @@
                     alert("Please enter details");
                     document.getElementById("login").href = 'login.html';
                 }
+                //THIS CONDITION HAS TO BE CHANGED W.R.T THE PHP LOGIN AUTHENTICATION, PLIS HELP
                 else if(username.value==password.value)
                 {
                     alert("Login successful");

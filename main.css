@@ -117,19 +117,21 @@ li a:active{
 
 .ui-datepicker {
     display: none;
-    width: 500px;
+    width: 400px;
     padding: 35px;
     cursor: default;
- 
+    position:relative;
+    top: 100px;
+    left: 100px;
     text-transform: uppercase;
     font-family: Tahoma;
-    font-size: 12px;
+    font-size: 16px;
  
-    background: #141517;
+    background: rgba(213, 243, 220, 0.842);;
  
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
  
     -webkit-box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0);
     -moz-box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0);
@@ -139,7 +141,7 @@ li a:active{
 .ui-datepicker-header {
     position: relative;
     padding-bottom: 10px;
-    border-bottom: 1px solid #d6d6d6;
+    border-bottom: 1px solid #292626;
 }
  
 .ui-datepicker-title { text-align: center; }
@@ -147,12 +149,12 @@ li a:active{
 .ui-datepicker-month {
     position: relative;
     padding-right: 15px;
-    color: #565656;
+    color: #000000;
 }
  
 .ui-datepicker-year {
     padding-left: 8px;
-    color: #a8a8a8;
+    color: #272626;
 }
 
 .ui-datepicker-month:before {

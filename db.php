@@ -42,10 +42,20 @@
         $course = $_POST['course'];
         $semester = $_POST['semester'];
         $sports = $_POST['sports'];
-       
+        $password = $_POST['password'];
+
+        //encrypting password
+        $ciphering = "AES-128-CTR"; //assigning encryption method
+        $iv_length = openssl_cipher_iv_length($ciphering); //assigning initialization vector length, which is not NULL
+        $options = 0; 
+        $encryption_iv = '1234567891011121'; //encryption initialization vector
+        $encryption_key = 'SportsForum';
+
+        $encryption = openssl_encrypt($simple_string, $ciphering, $encryption_key, $options, $encryption_iv); 
+
         // Query to insert values into database
-         =$sql "INSERT INTO registration (Name, SRN, Email, DOB, Gender, College, Course, Semester, Sports)
-        VALUES ('$name', '$srn', '$email', '$dob', '$gender', '$college','$course', '$semester', '$sports')";
+        $sql="INSERT INTO registration (Name, SRN, Email, DOB, Gender, College, Course, Semester, Sports,Password)
+        VALUES ('$name', '$srn', '$email', '$dob', '$gender', '$college','$course', '$semester', '$sports','$encryption')";
         echo "Record submitted. ";
 
         if ($conn->query($sql) === TRUE)
@@ -54,7 +64,7 @@
             echo("<script>swal({
                   icon: 'success',
                   title: 'Congratulations!',
-                  text: 'You are now a user of SportsForum',
+                  text: 'You are now registered as a Hoop user!',
                   button: 'OK',
                   closeOnClickOutside: false
             }).then(function(){window.location='login.html'});</script>");

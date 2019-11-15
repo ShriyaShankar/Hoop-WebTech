@@ -47,7 +47,7 @@
         </style>
     </head>
     <body id="body">
-        <form class="signup" action="db.php" method="POST" enctype="multipart/form-data">
+        <form class="signup"  action="db.php" method="POST" enctype="multipart/form-data">
 
             Name: <input id="name" name="name" placeholder="Enter name" type="text" required><br><br>
             Student Registration Number : <input type="text" id="srn" name="srn"  placeholder="Enter Reg no." required><br><br>
@@ -72,11 +72,11 @@
             </select><br><br>
             Semester: <input id="semester" name="semester" type="number" max="8" min="1" required><br><br>   
             Sport(s): <br><br>
-            <input type="checkbox" id="sp1" value="sports" name="sports" required>Basketball
+            <input type="checkbox" id="sp1" value="sports" name="sports" >Basketball
             <input type="checkbox" id="sp2" value="sports" name="sports">Throwball
             <input type="checkbox" id="sp3" value="sports" name="sports">Football
             <hr>
-            Create password: <input type="password" id="p1" placeholder="Enter password"><br><br>
+            Create password: <input type="password" id="p1" name="password" placeholder="Enter password"><br><br>
             Confirm password: <input type="password" id="p2" placeholder="Re-enter password">
             <br><br>
             <input class="sub" type="submit" id="submit" value="Register">
