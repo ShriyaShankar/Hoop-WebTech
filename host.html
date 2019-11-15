@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!--Include jQuery and Bootstrap scripts-->
         <title>Host Tournament</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +11,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script src="main.js"></script>
     </head>
+
     <body id="body">
+        <!--Top bar for User Profile and Home buttons-->
             <ul id = "nav_bar">
                     <li>
                     <li><a href = "myprofile.html">My Profile</a></li>
@@ -18,24 +21,24 @@
                     <li id="litext">HOOP - A SPORTS FORUM</li>
                     <li style="float:right"><a href = "login.html">Logout</a></li>
                     </li>
-                  </ul>
-                  <br><br>
-        <h2>You're only a few clicks away!</h2>
-        <form action="host_action.php" method="POST" enctype="multipart/form-data">
+            </ul>
+            <br><br>
 
-            <div class="row1">
-                
-                <div class="col-lg-3">
-                    <h3>Pick a sport</h3>
-                    <select name="sport" id="sport" required>
-                        <option>Basketball</option>
-                        <option>Throwball</option>
-                        <option>Football</option>
-                    </select>
-                </div>
+            <h2>You're only a few clicks away!</h2>
 
-
-                <div class="col-lg-3">
+            <!--Form to host tournament-->
+            
+            <form action="host_action.php" method="POST" enctype="multipart/form-data">
+                <div class="row1">
+                    <div class="col-lg-3">
+                        <h3>Pick a sport</h3>
+                        <select name="sport" id="sport" required>
+                            <option>Basketball</option>
+                            <option>Throwball</option>
+                            <option>Football</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3">
                         <h3>Select host college</h3>
                         <select name="college" id="college" required>
                             <option>PES University</option>
@@ -44,20 +47,17 @@
                             <option>MSRIT</option>
                             <option>Reva University</option>
                         </select>
-                </div>
-
-                <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-3">
                         <h3>Select start date</h3>
                         <input name="startdate" id="startdate" type="date"required>
-                </div>
-
-                <div class="col-lg-3">
+                    </div>
+                    <div class="col-lg-3">
                         <h3>Select end date</h3>
                         <input name="enddate" id="enddate" type="date" required>
+                    </div>
+                    <input type="submit" id="go" value="Go">
                 </div>
-                <input type="submit" id="go" value="Go">
-            </div>
-            
-        </form>
+            </form>
     </body>
 </html>

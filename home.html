@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <!--  <iframe src="https://calendar.google.com/calendar/b/2/embed?height=500&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FKolkata&amp;src=ZTJkdTF0ajJoc2MxMTE2djY1Ym5pY3JpazRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%233F51B5&amp;title=SportsForum&amp;showPrint=0&amp;showTabs=0&amp;showTz=0" style="border-width:0" width="600" height="500" frameborder="0" scrolling="no"></iframe>
-   --> 
-
    <head>
-       <title>
+        <title>
            Home
-       </title>
-       <meta charset="utf-8">
+        </title>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="main.css">
         <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
-      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-      
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script type="text/javascript" src="main.js"></script>
    </head>
 
    <body id="body">
+
+    <!--Top bar for User Profile and Home Button-->
      <ul id = "nav_bar">
        <li>
        <li><a id="nav1" href = "myprofile.html">My Profile</a></li>
@@ -28,7 +26,10 @@
        <li style="float:right"><a id = "nav3" href = "login.html">Logout</a></li>
        </li>
      </ul>
+
      <br><br>
+
+     <!--Placeholder for calendar on LHS-->
        <div class="row">
             <div class="col-lg-7" id="calendar">
               <div class="col-lg-12">
@@ -43,8 +44,9 @@
                         });
                     </script>
               </div>    
-               <!--- <iframe src="https://calendar.google.com/calendar/b/2/embed?height=500&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FKolkata&amp;src=ZTJkdTF0ajJoc2MxMTE2djY1Ym5pY3JpazRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%233F51B5&amp;title=SportsForum&amp;showPrint=0&amp;showTabs=0&amp;showTz=0" style="border-width:0" width="600" height="420" frameborder="0" scrolling="no"></iframe> -->
             </div>
+
+        <!--Hosting, Joining and Editing Buttons on RHS-->
             <div class="col-lg-5">
                 <button class="button1" id="host" onclick="hostTournament()">Host a Tournament</button>
                 <button class="button1" id="join" onclick="joinTournament()">Join a Tournament</button>

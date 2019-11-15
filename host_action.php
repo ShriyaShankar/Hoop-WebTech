@@ -22,23 +22,24 @@
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Check connection
+    // Check connection: if error in connecting:
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+
+    // Check connection: if connection is successful:
     else
     {
         echo "Connection successful <br>";
     }
 
     // Form values are mapped to database fields
-     
         $sport = $_POST['sport'];
         $host=$_POST['college'];
         $start=$_POST['startdate'];
         $end=$_POST['enddate'];
         
-        // Query to insert values into database
+        // Query to insert values into database by matching column name
         $sql = "INSERT INTO host_tournament (Sport, Host, StartDate, EndDate)
         VALUES ('$sport', '$host', '$start', '$end')";
         echo "Record submitted. ";
