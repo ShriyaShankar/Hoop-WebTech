@@ -9,3 +9,4 @@ function joinTournament(){
 function editTournament(){
     window.location = "edit.html";
 }
+
