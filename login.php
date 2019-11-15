@@ -39,7 +39,7 @@
                     }
                     else{
                         $chk = -1;
-                        echo "Incorrect Password. Please enter details again."
+                        echo "Incorrect Password. Please enter details again.";
                     }
                 }
             }
