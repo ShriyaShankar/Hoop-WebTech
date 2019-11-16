@@ -24,11 +24,15 @@
     //If data exists, print data
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-            echo "Sport: " .$row['Sport']. "</br>";
-            echo "College: " .$row['Host']. "</br>";
-            echo "Start Date " .$row['StartDate']. "</br>";
-            echo "End Date " .$row['EndDate']. "</br>";
-            echo "</br>";
+            // echo "Sport: " .$row['Sport']. "</br>";
+            // echo "College: " .$row['Host']. "</br>";
+            // echo "Start Date " .$row['StartDate']. "</br>";
+            if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                echo json_encode($row['StartDate']);
+                // The request is using the POST method
+           }
+            // echo "End Date " .$row['EndDate']. "</br>";
+            // echo "</br>";
         }
     } else {
         echo "There are no upcoming tournaments";

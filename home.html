@@ -13,37 +13,94 @@
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script type="text/javascript" src="main.js"></script>
+
    </head>
 
-   <body id="body">
+   <body id="body" onload="initBCalendarView();">
 
     <!--Top bar for User Profile and Home Button-->
      <ul id = "nav_bar">
-       <li>
-       <li><a id="nav1" href = "myprofile.html">My Profile</a></li>
-       <li><a id="nav2" href = "home.html">Home</a></li>
-       <li id="litext">HOOP - A SPORTS FORUM</li>
-       <li style="float:right"><a id = "nav3" href = "login.html">Logout</a></li>
-       </li>
+    
+       <li class="navLi"><a id="nav1" href = "myprofile.html">My Profile</a></li>
+       <li class="navLi"><a id="nav2" href = "home.html">Home</a></li>
+       <li class="navLi" id="litext">HOOP - A SPORTS FORUM</li>
+       <li class="navLi" style="float:right"><a id = "nav3" href = "login.html">Logout</a></li>
+    
      </ul>
 
      <br><br>
 
      <!--Placeholder for calendar on LHS-->
        <div class="row">
-            <div class="col-lg-7" id="calendar">
-              <div class="col-lg-12">
+            <div class="col-lg-7" id="bcal-container">
                 <br/>
                 <br/>
-                    <script>
-                        $('#calendar').datepicker({
-                            inline: true,
-                            firstDay: 1,
-                            showOtherMonths: true,
-                            dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-                        });
-                    </script>
-              </div>    
+                <div class="month">
+                    <ul id="monthUL">
+                        <li class="prev ulli" onclick="bcalenderMonthChange(this);">&#10094;</li>
+                        <li class="next ulli" onclick="bcalenderMonthChange(this);">&#10095;</li>
+                        <li class="ulli">
+                            <span id="bcal-mon"></span><br><span style="font-size:18px"
+                                id="bcal-year"></span>
+                            <br>
+                            <span id="jumpToToday" class="glyphicon glyphicon-time"
+                                onclick="jumpToToday();">Today</span>
+                        </li>
+                    </ul>
+                </div>
+                        <ul class="weekdays">
+                            <li>Mo</li>
+                            <li>Tu</li>
+                            <li>We</li>
+                            <li>Th</li>
+                            <li>Fr</li>
+                            <li>Sa</li>
+                            <li>Su</li>
+                        </ul>
+                        <ul class="days">
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li class="selected" onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                            <li onclick="bcalendarSelect(this)"></li>
+                        </ul>   
             </div>
 
         <!--Hosting, Joining and Editing Buttons on RHS-->
@@ -54,4 +111,5 @@
             </div>
        </div>
    </body>
+   <script src="./calendar.js"></script>
 </html>
