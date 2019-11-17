@@ -20,8 +20,12 @@
         $sql = "SELECT Email,Password FROM registration";
         $result = $conn->query($sql);
         $chk = 0;
-
-        if ($result->num_rows > 0) {
+        if($email=='' || $password == '')
+        {
+            echo('<script> alert("alert("Please enter details");
+            document.getElementById("login").href = "login.html";</script>');
+        }
+        elseif ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 if($row['Email']==$email)
                 {
@@ -45,11 +49,12 @@
             }
             if($chk==0)
             {
-                echo "Email not found. Please register.";
+                echo "<script> alert('Email not found. Please register.')</script>";
             }
             elseif($chk==1)
             {
-                //redirect page to home
+                echo("<script>alert('Login successful');
+                window.location.href = 'home.html';</script>")
             }
         }
     }

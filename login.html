@@ -9,7 +9,7 @@
             <div class="header">
                 HOOP
             </div>
-            <form class="login" action="" onsubmit="login.php" method="POST">
+            <form class="login" action="login.php" onsubmit="login()" method="POST">
                 <h3 class="h31">LOGIN<br><br>
                 Email<br><input id="username" type="text" name="email" placeholder="Enter Username"><br><br>
                 Password<br><input id="password" type="password" name="password" placeholder="Enter Password"><br></h3>
@@ -25,7 +25,7 @@
                     <br><br><br>
             </div> 
         <script>
-            var a = document.getElementById("login");
+            /*var a = document.getElementById("login");
             a.addEventListener("click",login,false);
             function login()
             {
@@ -36,18 +36,21 @@
                 {
                     alert("Please enter details");
                     document.getElementById("login").href = 'login.html';
+                    return 0;
                 }
                 //THIS CONDITION HAS TO BE CHANGED W.R.T THE PHP LOGIN AUTHENTICATION, PLIS HELP
-                else if(username.value==password.value)
+               else if(username.value==password.value)
                 {
                     alert("Login successful");
                     window.location.href = "home.html";
+                    return 1;
                 }
                 else{
                     alert("Password is incorrect. Please enter password again");
                     document.location.reload();
-                }
-            }
+                    return 0;
+                }*/
+            
         </script> 
     
 
