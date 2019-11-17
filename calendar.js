@@ -1,6 +1,7 @@
 const scalDate = new Date(); // not reqd for us
 const bcalDate = new Date();
 let datesToBeHighlighted = []; //list of dates that we want to highlight
+let tournamentName = [];
 // const date1 = new Date();
 // date1.setDate(19);
 // datesToBeHighlighted.push(date1);
@@ -10,6 +11,7 @@ fetch('join.php') //fetch data from join.php file
     .then((response) => response.json())
         .then(response => {
             datesToBeHighlighted = response.map(dateString => convertToDateObject(dateString))
+          //  tournamentName = response.map();
             initBCalendarView();
         });
 function assignDate(dateObjA, dateObjB) {
@@ -128,7 +130,7 @@ function bcalenderMonthChange(clickedClass) //previous and next month access
         bcalDate.setMonth(bcalDate.getMonth()-1); //prev month is current month - 1
     else
         bcalDate.setMonth(bcalDate.getMonth()+1); //next month is current month + 1
-    assignDate(scalDate,bcalDate);
+    assignDate(scalDate, bcalDate);
     initBCalendarView();
 }
 
