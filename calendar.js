@@ -1,12 +1,19 @@
-const scalDate = new Date();
+const scalDate = new Date(); // not reqd for us
 const bcalDate = new Date();
-const datesToBeHighlighted = [];
-const date1 = new Date();
-date1.setDate(19);
-datesToBeHighlighted.push(date1);
+let datesToBeHighlighted = []; //list of dates that we want to highlight
+let tournamentName = [];
+// const date1 = new Date();
+// date1.setDate(19);
+// datesToBeHighlighted.push(date1);
 const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-fetch('join.php').then((response) => String(response)).then(response => console.log(response));
+fetch('join.php') //fetch data from join.php file
+    .then((response) => response.json())
+        .then(response => {
+            datesToBeHighlighted = response.map(dateString => convertToDateObject(dateString))
+          //  tournamentName = response.map();
+            initBCalendarView();
+        });
 function assignDate(dateObjA, dateObjB) {
     dateObjA.setDate(1);
     dateObjA.setMonth(dateObjB.getMonth());
@@ -14,31 +21,34 @@ function assignDate(dateObjA, dateObjB) {
     dateObjA.setFullYear(dateObjB.getFullYear());
 }
 
-function highlightAccordingToDates(dateString){
-    const dateElements = dateString.split("-");
-    const year = dateElements[0];
-    const month = dateElements[1];
-    const date = dateElements[2];
-
-
+function convertToDateObject(dateString){
+    const dateElements = dateString.split("-"); //date format is in yyyy-mm-dd, so split based on '-'
+    const year = dateElements[0]; //gives yyyy
+    const month = dateElements[1]; //gives mm
+    const date = dateElements[2]; //gives dd
+    const newDate = new Date();
+    newDate.setDate(date);
+    newDate.setMonth(month - 1); //index 0
+    newDate.setFullYear(year);
+    return newDate;
 }
 function initBCalendarView() {
-    const monthContainer=document.getElementById("bcal-mon");
-    monthContainer.innerHTML = months[bcalDate.getMonth()];
+    const monthContainer=document.getElementById("bcal-mon"); //month container
+    monthContainer.innerHTML = months[bcalDate.getMonth()]; //returns current month to html span tag
     const yearContainer = document.getElementById("bcal-year");
-    yearContainer.innerHTML=bcalDate.getFullYear();
-    bcalDate.setDate(1);
+    yearContainer.innerHTML=bcalDate.getFullYear(); //returns current year to html span tag
+    bcalDate.setDate(1); //default date set to 1st
     while (bcalDate.getDay()!=1) {
-        bcalDate.setDate(bcalDate.getDate()-1);    
+        bcalDate.setDate(bcalDate.getDate()-1);    //if date isn't first, set to current date
     }
-    let bcalContainer = document.getElementById("bcal-container");
-    bcalContainer = bcalContainer.getElementsByClassName("days");
-    bcalContainer=bcalContainer[0].getElementsByTagName("li");
-    for(let i=0;i<bcalContainer.length;i++) {
+    let bcalContainer = document.getElementById("bcal-container"); //calendar container
+    bcalContainer = bcalContainer.getElementsByClassName("days"); //days class
+    bcalContainer=bcalContainer[0].getElementsByTagName("li"); 
+    for(let i=0;i<bcalContainer.length;i++) { //remove all attributes for all dates
         bcalContainer[i].classList.remove('inactive');
         bcalContainer[i].classList.remove('active');
         bcalContainer[i].classList.remove('selected');
-        if (bcalDate.getMonth()!=scalDate.getMonth()) {
+        if (bcalDate.getMonth()!=scalDate.getMonth()) { //not reqd for us
             bcalContainer[i].innerHTML=bcalDate.getDate();
             bcalContainer[i].setAttribute('class','inactive');
         }
@@ -54,11 +64,16 @@ function initBCalendarView() {
         bcalDate.setDate(bcalDate.getDate()+1);
     }
     for(const date of datesToBeHighlighted){    
-        if((date.getMonth()+1)%13 == bcalDate.getMonth() && date.getFullYear() == bcalDate.getFullYear()){
+      //  if((date.getMonth()+1)%13 == bcalDate.getMonth() && date.getFullYear() == bcalDate.getFullYear()){
+          if(date.getFullYear() == bcalDate.getFullYear()){
             for(let i=0;i<bcalContainer.length;i++){
                 if(!(bcalContainer[i].classList.contains('inactive'))){
-                    if(date.getDate() == bcalContainer[i].innerHTML)
+                    if(date.getDate() == bcalContainer[i].innerHTML && (date.getMonth()+1)%13 == bcalDate.getMonth() )
                         bcalContainer[i].classList.add("selected");
+                    // else if((date.getMonth()+1)%13 == bcalDate.getMonth() + 1){
+                    //     bcalContainer[i].classList.add("selected");
+                    //     monthContainer[i+1].classList.add("selected");
+                    // }
                 }
             }     
         }
@@ -66,7 +81,7 @@ function initBCalendarView() {
     assignDate(bcalDate,scalDate);
 }
 
-function scalendarViewChange(clicked_id)
+function scalendarViewChange(clicked_id) //not reqd for us
 {    
     if (clicked_id == "scal-button-left")        
         scalDate.setDate(scalDate.getDate()-1);    
@@ -75,7 +90,7 @@ function scalendarViewChange(clicked_id)
     initBCalendarView();
 }
 
-function bcalendarSelect(clickedDateElement)
+/* function bcalendarSelect(clickedDateElement)
 {
     const spanElements = clickedDateElement.getElementsByTagName("span");
     if (spanElements.length==0)
@@ -98,24 +113,26 @@ function bcalendarSelect(clickedDateElement)
         assignDate(scalDate,bcalDate);
     }
     initBCalendarView();
-}
+} */
 
-function jumpToToday()
+function jumpToToday() //return back to present date
 {
     const currentDate = new Date();
-    assignDate(scalDate, currentDate);
-    assignDate(bcalDate, currentDate);
+    assignDate(scalDate, currentDate); //not reqd for us
+    assignDate(bcalDate, currentDate); //returns current date
     initBCalendarView();
 }
 
-function bcalenderMonthChange(clickedClass)
+function bcalenderMonthChange(clickedClass) //previous and next month access
 {
     bcalDate.setDate(1);
-    if (clickedClass.className=="prev")
-        bcalDate.setMonth(bcalDate.getMonth()-1);
+    if (clickedClass.className=="prev ulli") 
+        bcalDate.setMonth(bcalDate.getMonth()-1); //prev month is current month - 1
     else
-        bcalDate.setMonth(bcalDate.getMonth()+1);
-    assignDate(scalDate,bcalDate);
+        bcalDate.setMonth(bcalDate.getMonth()+1); //next month is current month + 1
+    assignDate(scalDate, bcalDate);
     initBCalendarView();
 }
+
+
 

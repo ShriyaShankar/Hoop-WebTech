@@ -1,4 +1,3 @@
-
 <?php
 
     //Database credentials
@@ -19,29 +18,21 @@
     }
 
     // Query to select respective fields from the table
-    $sql = "SELECT Sport, Host, StartDate, EndDate FROM host_tournament";
+    $sql = "SELECT Name, SRN, Email, Gender, College FROM registration";
     $result = $conn->query($sql);
-
 
     //If data exists, print data
     if ($result->num_rows > 0) {
-        $dates = [];
-        $tournamentName = [];
         while($row = $result->fetch_assoc()) {
-            // echo "Sport: " .$row['Sport']. "</br>";
-            array_push($dates, $row['StartDate']);
-
+            $sport = $_POST['Sport'];
+            $srn = $_POST['SRN'];
+            $email = $_POST['Sport'];
+            $sport = $_POST['Sport'];
         }
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            echo json_encode($dates);
-        }
-    } 
-    
-    else {
+    } else {
         echo "There are no upcoming tournaments";
     }
+
     //Close connection
     $conn->close();
-
 ?> 
-

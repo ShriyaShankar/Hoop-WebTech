@@ -3,7 +3,7 @@ function hostTournament(){
 }
 
 function joinTournament(){
-    window.location = "join.php";
+    window.location = "joinTournament.php";
 }
 
 function editTournament(){
