@@ -11,7 +11,7 @@
         <script src="main.js"></script>
         <style>
             table {
-                width:100%;
+                width:95%;
             }
             table, th, td {
                 border: 1px solid black;
@@ -64,12 +64,13 @@
             }
 
             // Query to select respective fields from the table
-            $sql = "SELECT Sport, Host, StartDate, EndDate FROM host_tournament";
+            $sql = "SELECT ID, Sport, Host, StartDate, EndDate FROM host_tournament";
             $result = $conn->query($sql);
             
             echo '<table border="0" cellspacing="2" cellpadding="2"> 
                 
                 <tr> 
+                    <td> <font face="Arial"><b>ID</font> </td> 
                     <td> <font face="Arial"><b>Host</font> </td> 
                     <td> <font face="Arial"><b>Sport</font> </td> 
                     <td> <font face="Arial"><b>Start Date</font> </td> 
@@ -78,16 +79,18 @@
  
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
-                        $field1name = $row["Host"];
-                        $field2name = $row["Sport"];
-                        $field3name = $row["StartDate"];
-                        $field4name = $row["EndDate"];
+                        $field1name = $row["ID"];
+                        $field2name = $row["Host"];
+                        $field3name = $row["Sport"];
+                        $field4name = $row["StartDate"];
+                        $field5name = $row["EndDate"];
     
                         echo '<tr> 
                                 <td>'.$field1name.'</td> 
                                 <td>'.$field2name.'</td> 
                                 <td>'.$field3name.'</td>
                                 <td>'.$field4name.'</td> 
+                                <td>'.$field5name.'</td>
                             </tr>';
                 }
                 $result->free();
