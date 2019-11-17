@@ -18,25 +18,16 @@
     }
 
     // Query to select respective fields from the table
-    $sql = "SELECT Sport, Host, StartDate, EndDate FROM host_tournament";
+    $sql = "SELECT Name, SRN, Email, Gender, College FROM registration";
     $result = $conn->query($sql);
 
     //If data exists, print data
     if ($result->num_rows > 0) {
-        $dates = [];
         while($row = $result->fetch_assoc()) {
-            // echo "Sport: " .$row['Sport']. "</br>";
-                        // echo "Sport: " .$row['Sport']. "</br>";
-            // echo "College: " .$row['Host']. "</br>";
-            // echo "Start Date " .$row['StartDate']. "</br>";
-            
-            array_push($dates, $row['StartDate']);
-                // The request is using the POST method
-            // echo "End Date " .$row['EndDate']. "</br>";
-            // echo "</br>";
-        }
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            echo json_encode($dates);
+            $sport = $_POST['Sport'];
+            $srn = $_POST['SRN'];
+            $email = $_POST['Sport'];
+            $sport = $_POST['Sport'];
         }
     } else {
         echo "There are no upcoming tournaments";
