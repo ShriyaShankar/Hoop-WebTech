@@ -35,7 +35,8 @@ $stmt->close();
 	<body class="loggedin">
 		<nav class="navtop">
 			<div>
-				<h1>Sports Forum</h1>
+                <h1>Sports Forum</h1>
+                <a href="home.html"><i class="fas fa-sign-out-alt"></i>Home</a>
 				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
 			</div>
 		</nav>
