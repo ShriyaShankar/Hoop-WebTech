@@ -34,12 +34,17 @@
             <form action="host_action.php" method="POST" enctype="multipart/form-data">
                 <div class="row1">
                     <div class="col-lg-3">
-                        <h3>Pick a sport</h3>
-                        <select name="sport" id="sport" required>
-                            <option>Basketball</option>
-                            <option>Throwball</option>
-                            <option>Football</option>
-                        </select>
+                        <h3>Pick sport(s)</h3>
+                        <div id="select_sport" class="col-lg-11">
+                            <input type="checkbox" name="sport" value="basketball">Basketball<br>
+                            <input type="checkbox" name="sport" value="throwball">Throwball<br>
+                            <input type="checkbox" name="sport" value="volleyball">Volleyball<br>
+                            <input type="checkbox" name="sport" value="football">Football<br>
+                        </div>
+                        <br> <br> <br> <br> <br>
+                        <h3>Tournament Name:</h3>
+                        <input type="text" placeholder="Enter tournament name" id="tournament_name">
+                        
                     </div>
                     <div class="col-lg-3">
                         <h3>Select host college</h3>
@@ -50,14 +55,23 @@
                             <option>MSRIT</option>
                             <option>Reva University</option>
                         </select>
+                        <br> <br> <br> <br> <br>
+                        <h3>Tournament Venue:</h3>
+                        <input type="text" placeholder="Enter tournament venue" id="tournament_venue">
                     </div>
                     <div class="col-lg-3">
                         <h3>Select start date</h3>
                         <input name="startdate" id="startdate" type="date"required>
+                        <br> <br> <br> <br> <br>
+                        <h3>Contact Name:</h3>
+                        <input type="text" id="contact_name" placeholder="Enter contact name">
                     </div>
                     <div class="col-lg-3">
                         <h3>Select end date</h3>
                         <input name="enddate" id="enddate" type="date" required>
+                        <br> <br> <br> <br> <br>
+                        <h3>Contact Number:</h3>
+                        <input type="text" id="contact_number" placeholder="Enter contact number">
                     </div>
                     <input type="submit" id="go" value="Go">
                 </div>
