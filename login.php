@@ -54,7 +54,9 @@
             elseif($chk==1)
             {
                 echo("<script>alert('Login successful');
-                window.location.href = 'home.html';</script>")
+                window.location.replace('home.html');</script>");
+                
             }
         }
     }
+?>
