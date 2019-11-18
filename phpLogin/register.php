@@ -1,3 +1,11 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+</html>
+
+
 <?php
 // Change this to your connection info.
 $DATABASE_HOST = 'localhost';
@@ -24,6 +32,7 @@ if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['emai
 
 // We need to check if the account with that username exists.
 if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
+    
 	// Bind parameters (s = string, i = int, b = blob, etc), hash the password using the PHP password_hash function.
 	$stmt->bind_param('s', $_POST['username']);
 	$stmt->execute();
@@ -40,7 +49,16 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $stmt->bind_param('sss', $_POST['username'], $password, $_POST['email']);
             $stmt->execute();
-            echo 'You have successfully registered, you can now login!';
+			echo 'You have successfully registered, you can now login!';
+			// echo '<script>  window.location = "index.html"; </script>';
+			echo " Redirecting... ";
+            echo("<script>swal({
+                  icon: 'success',
+                  title: 'Congratulations!',
+                  text: 'You are now registered as a Hoop user!',
+                  button: 'OK',
+                  closeOnClickOutside: false
+            }).then(function(){window.location='index.html'});</script>");
         } else {
             // Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
             echo 'Could not prepare statement!';    
@@ -53,3 +71,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 }
 $con->close();
 ?>
+
+<html>
+
+</html>
