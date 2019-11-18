@@ -1,112 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Register
-        </title>
-        <style>
-            #body{
-                background-color: rgb(247, 241, 236);
-                background-image: url('bg4.jpg'); 
-                background-repeat: no-repeat;
-                background-attachment: fixed; 
-                background-size: cover;
-            }
-            .signup{
-                background-color: rgba(247, 217, 177, 0.945);
-                opacity: 0.8;
-                border: 2px solid;
-                border-color: black;
-                margin: 20%;
-                margin-top: 5%;
-                margin-bottom:5%;
-                align-content: center;
-                color:maroon;
-                padding:20px;
-                text-align: justify;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                font-size: 20px;
-                position:absolute top;
-            }
-            .sub:hover{
-                background-color: rgb(105, 5, 5);
-            }
-            .sub{
-                background-color:red;
-                border: none;
-                padding: 8px 25px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 12px;
-                margin: 4px 2px;
-                cursor: pointer;
-                color:white;
-                align-self: center;
-            }
-        </style>
-    </head>
-    <body id="body">
-        <form class="signup"  action="db.php" method="POST" enctype="multipart/form-data">
-
-            Name: <input id="name" name="name" placeholder="Enter name" type="text" required><br><br>
-            Student Registration Number : <input type="text" id="srn" name="srn"  placeholder="Enter Reg no." required><br><br>
-            Email: <input name="email" type="email" placeholder="Enter email" required><br><br>
-            DOB: <input id="dob" name="dob" type="date" required><br><br>
-            Gender:
-            <input type="radio" id="male" value="male" name="gender" required>Male
-            <input type="radio" id="female" value="female" name="gender">Female
-            <input type="radio" id="nonbin" value="other" name="gender">Other<hr>
-            College:
-            <select name="college" required>
-                <option value="PES University">PES University</option>
-                <option value="RVCE">RV College of Engineering</option>
-                <option value="BMSCE">BMS College of Engineering</option>
-                <option value="MSRIT">MS Ramaiah Institute of Technology</option>
-            </select>
-            <br><br>
-            Course:
-            <select name="course" required>
-                <option value="btech">B. Tech</option>
-                <option value="barch">B. Arch</option>
-                <option value="bba">BBA</option>
-            </select><br><br>
-            Semester: <input id="semester" name="semester" type="number" max="8" min="1" required><br><br>   
-            Sport(s): <br><br>
-            <input type="checkbox" id="sp1" value="sports" name="sports" >Basketball
-            <input type="checkbox" id="sp2" value="sports" name="sports">Throwball
-            <input type="checkbox" id="sp3" value="sports" name="sports">Football
-            <hr>
-            Create password: <input type="password" id="p1" name="password" placeholder="Enter password"><br><br>
-            Confirm password: <input type="password" id="p2" placeholder="Re-enter password">
-            <br><br>
-            <input class="sub" type="submit" id="submit" value="Register">
-        
-        <br>
-        <p style="position: relative;">Already have an account? 
-        <a href="login.html">Login</a></p>
-    </form>
-    </body>
-    <script>
-        function signup()
-        {
-            var p1 = document.getElementById("p1");
-            var p2 = document.getElementById("p2");
-            var sem = document.getElementById("sem");
-            if((p1.value!=p2.value))
-            {
-                alert("Passwords do not match. Enter again");
-                document.location.reload();
-                
-            }
-            else if(sem.value<1 || sem.value>8)
-            {
-                alert("Semester entered is incorrect");
-            }
-            else
-            {   
-                alert("Registration completed");
-            }
-        }
-    </script>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <link href="style.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="register">
+			<h1>Register</h1>
+			<form action="signup.php" method="post" autocomplete="off">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<label for="email">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="email" name="email" placeholder="Email" id="email" required>
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	</body>
 </html>
