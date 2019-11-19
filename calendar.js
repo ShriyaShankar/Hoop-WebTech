@@ -71,7 +71,8 @@ function initBCalendarView() {
           if(date.getFullYear() == bcalDate.getFullYear()){
             for(let i=0;i<bcalContainer.length;i++){
                 if(!(bcalContainer[i].classList.contains('inactive'))){
-                    if(date.getDate() == bcalContainer[i].innerHTML && date.getMonth() == bcalDate.getMonth())
+                  //  if(date.getDate() == bcalContainer[i].innerHTML && date.getMonth() == bcalDate.getMonth())
+                  if(date.getDate() == bcalContainer[i].innerHTML && (date.getMonth()+1)%13 == bcalDate.getMonth() )
                         bcalContainer[i].classList.add("selected");
                     // else if((date.getMonth()+1)%13 == bcalDate.getMonth() + 1){
                     //     bcalContainer[i].classList.add("selected");
