@@ -15,9 +15,6 @@ fetch('join.php') //fetch data from join.php file
             initBCalendarView();
         });
 function assignDate(dateObjA, dateObjB) {
-    /*
-        Deep copy function to copy two date objects, Javascript objects are always only referenced.
-    */
     dateObjA.setDate(1);
     dateObjA.setMonth(dateObjB.getMonth());
     dateObjA.setDate(dateObjB.getDate());
@@ -51,7 +48,7 @@ function initBCalendarView() {
         bcalContainer[i].classList.remove('inactive');
         bcalContainer[i].classList.remove('active');
         bcalContainer[i].classList.remove('selected');
-        if (bcalDate.getMonth()!=scalDate.getMonth()) { // to make the dates of previous and next months in current calendar view less prominent
+        if (bcalDate.getMonth()!=scalDate.getMonth()) { //not reqd for us
             bcalContainer[i].innerHTML=bcalDate.getDate();
             bcalContainer[i].setAttribute('class','inactive');
         }
@@ -71,7 +68,7 @@ function initBCalendarView() {
           if(date.getFullYear() == bcalDate.getFullYear()){
             for(let i=0;i<bcalContainer.length;i++){
                 if(!(bcalContainer[i].classList.contains('inactive'))){
-                    if(date.getDate() == bcalContainer[i].innerHTML && date.getMonth() == bcalDate.getMonth())
+                    if(date.getDate() == bcalContainer[i].innerHTML && (date.getMonth()+1)%13 == bcalDate.getMonth() )
                         bcalContainer[i].classList.add("selected");
                     // else if((date.getMonth()+1)%13 == bcalDate.getMonth() + 1){
                     //     bcalContainer[i].classList.add("selected");
@@ -84,6 +81,14 @@ function initBCalendarView() {
     assignDate(bcalDate,scalDate);
 }
 
+function scalendarViewChange(clicked_id) //not reqd for us
+{    
+    if (clicked_id == "scal-button-left")        
+        scalDate.setDate(scalDate.getDate()-1);    
+    else
+        scalDate.setDate(scalDate.getDate()+1);
+    initBCalendarView();
+}
 
 /* function bcalendarSelect(clickedDateElement)
 {
@@ -121,7 +126,7 @@ function jumpToToday() //return back to present date
 function bcalenderMonthChange(clickedClass) //previous and next month access
 {
     bcalDate.setDate(1);
-    if (clickedClass.classList.contains("prev")) 
+    if (clickedClass.className=="prev ulli") 
         bcalDate.setMonth(bcalDate.getMonth()-1); //prev month is current month - 1
     else
         bcalDate.setMonth(bcalDate.getMonth()+1); //next month is current month + 1
