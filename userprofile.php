@@ -27,20 +27,24 @@ $stmt->close();
 <!DOCTYPE html>
 <html>
 	<head>
+	<ul id = "nav_bar">
+    
+	<li class="navLi"><a id="nav1" href = "home.html">Home</a></li>
+	<li class="navLi"><a id="nav2" href = "faq.html">FAQs</a></li>
+	<li class="navLi" id="litext">HOOP - A SPORTS FORUM</li>
+	<li class="navLi" style="float:right"><a id = "nav3" href = "login.html">Logout</a></li>
+	<li class="navLi" style="float:right"><a id = "nav3" href = "about.html">About/Contact Us</a></li>
+ 
+  </ul>
 		<meta charset="utf-8">
 		<title>Profile Page</title>
-		<link href="style.css" rel="stylesheet" type="text/css">
+		<link href="main.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	</head>
-	<body class="loggedin">
-		<nav class="navtop">
-			<div>
-                <h1>Sports Forum</h1>
-                <a href="home.html"><i class="fas fa-sign-out-alt"></i>Home</a>
-				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
-			</div>
-		</nav>
+	<body id="body">
+	
 		<div class="content">
+			<br><br><br>
 			<h2>Profile Page</h2>
 			<div>
 				<p>Your account details are below:</p>

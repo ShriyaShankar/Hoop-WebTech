@@ -35,16 +35,15 @@
     </head>
 
     <body id="body">
-        <ul id = "nav_bar">
+    <ul id = "nav_bar">
     
-            <li class="navLi"><a id="nav1" href = "myprofile.html">My Profile</a></li>
-            <li class="navLi"><a id="nav2" href = "home.html">Home</a></li>
-            <li class="navLi"><a id="nav2" href = "faq.html">FAQs</a></li>
-            <li class="navLi" id="litext">HOOP - A SPORTS FORUM</li>
-            <li class="navLi" style="float:right"><a id = "nav3" href = "about.html">About/Contact Us</a></li>
-            <li class="navLi" style="float:right"><a id = "nav3" href = "login.html">Logout</a></li>
-        
-        </ul>
+    <li class="navLi"><a id="nav1" href = "home.html">Home</a></li>
+    <li class="navLi"><a id="nav2" href = "faq.html">FAQs</a></li>
+    <li class="navLi" id="litext">HOOP - A SPORTS FORUM</li>
+    <li class="navLi" style="float:right"><a id = "nav3" href = "login.html">Logout</a></li>
+    <li class="navLi" style="float:right"><a id = "nav3" href = "about.html">About/Contact Us</a></li>
+ 
+  </ul>
 
   <br><br>
         

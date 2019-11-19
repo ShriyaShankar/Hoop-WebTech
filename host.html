@@ -15,16 +15,12 @@
     <body id="body">
         <!--Top bar for User Profile and Home buttons-->
         <ul id = "nav_bar">
-    
-                <li class="navLi"><a id="nav1" href = "myprofile.html">My Profile</a></li>
-                <li class="navLi"><a id="nav2" href = "home.html">Home</a></li>
-                <li class="navLi"><a id="nav2" href = "faq.html">FAQs</a></li>
-                <li class="navLi" id="litext">HOOP - A SPORTS FORUM</li>
-                <li class="navLi" style="float:right"><a id = "nav3" href = "login.html">Logout</a></li>
-                <li class="navLi" style="float:right"><a id = "nav3" href = "about.html">About/Contact Us</a></li>
-             
-              </ul>
-         
+            <li class="navLi"><a href = "myprofile.html">My Profile</a></li>
+            <li class="navLi"><a href = "home.html">Home</a></li>
+            <li id="litext">HOOP - A SPORTS FORUM</li>
+            <li style="float:right"><a href = "login.html">Logout</a></li>
+          </ul>
+          <br><br>
               <br><br>
 
         <!--   <h2>You're only a few clicks away!</h2> --> 
@@ -34,13 +30,18 @@
             <form action="host_action.php" method="POST" enctype="multipart/form-data">
                 <div class="row1">
                     <div class="col-lg-3">
-                        <h3>Pick sport(s)</h3>
-                        <div id="select_sport" class="col-lg-11">
-                            <input type="checkbox" name="sport" value="basketball">Basketball<br>
-                            <input type="checkbox" name="sport" value="throwball">Throwball<br>
-                            <input type="checkbox" name="sport" value="volleyball">Volleyball<br>
-                            <input type="checkbox" name="sport" value="football">Football<br>
-                        </div>
+                        <h3>Pick a sport</h3>
+                        
+                            <select name="sport" id="sport" required>
+                                <option>Basketball</option>
+                                <option>Throwball</option>
+                                <option>Football</option>
+                                <option>Volleyball</option>
+                                <option>Table Tennis</option>
+                                <option>Athletics</option>
+                                <option>Swimming</option>
+                            </select>
+
                         <br> <br> <br> <br> <br>
                         <h3>Tournament Name:</h3>
                         <input type="text" placeholder="Enter tournament name" id="tournament_name" name="tournament_name" required>
@@ -54,6 +55,9 @@
                             <option>BMS College of Engineering</option>
                             <option>MSRIT</option>
                             <option>Reva University</option>
+                            <option>Christ University</option>
+                            <option>BNMIT</option>
+                            <option>NHCE</option>
                         </select>
                         <br> <br> <br> <br> <br>
                         <h3>Tournament Venue:</h3>
