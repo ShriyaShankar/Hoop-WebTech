@@ -43,7 +43,7 @@
                         </div>
                         <br> <br> <br> <br> <br>
                         <h3>Tournament Name:</h3>
-                        <input type="text" placeholder="Enter tournament name" id="tournament_name">
+                        <input type="text" placeholder="Enter tournament name" id="tournament_name" name="tournament_name" required>
                         
                     </div>
                     <div class="col-lg-3">
@@ -57,23 +57,25 @@
                         </select>
                         <br> <br> <br> <br> <br>
                         <h3>Tournament Venue:</h3>
-                        <input type="text" placeholder="Enter tournament venue" id="tournament_venue">
+                        <input type="text" placeholder="Enter tournament venue" id="tournament_venue" name="tournament_venue" required>
                     </div>
                     <div class="col-lg-3">
                         <h3>Select start date</h3>
                         <input name="startdate" id="startdate" type="date"required>
                         <br> <br> <br> <br> <br>
                         <h3>Contact Name:</h3>
-                        <input type="text" id="contact_name" placeholder="Enter contact name">
+                        <input type="text" id="contact_name" name="contact_name" placeholder="Enter contact name" required>
                     </div>
                     <div class="col-lg-3">
                         <h3>Select end date</h3>
                         <input name="enddate" id="enddate" type="date" required>
                         <br> <br> <br> <br> <br>
                         <h3>Contact Number:</h3>
-                        <input type="text" id="contact_number" placeholder="Enter contact number">
+                        <input type="text" id="contact_number" name="contact_number" placeholder="Enter contact number" required>
+                        <br> <br> 
                     </div>
-                    <input type="submit" id="go" value="Go">
+                    
+                    <input type="submit" id="go" value="Host Tournament">
                 </div>
             </form>
     </body>

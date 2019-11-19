@@ -38,10 +38,14 @@
         $host=$_POST['college'];
         $start=$_POST['startdate'];
         $end=$_POST['enddate'];
+        $tournament_name=$_POST['tournament_name'];
+        $tournament_venue=$_POST['tournament_venue'];
+        $contact_name=$_POST['contact_name'];
+        $contact_number=$_POST['contact_number'];
         
         // Query to insert values into database by matching column name
-        $sql = "INSERT INTO host_tournament (Sport, Host, StartDate, EndDate)
-        VALUES ('$sport', '$host', '$start', '$end')";
+        $sql = "INSERT INTO host_tournament (Sport, Host, StartDate, EndDate, tournament_name, tournament_venue, contact_name, contact_number)
+        VALUES ('$sport', '$host', '$start', '$end', '$tournament_name', '$tournament_venue', '$contact_name', '$contact_number' )";
         echo "Record submitted. ";
 
         if ($conn->query($sql) === TRUE)

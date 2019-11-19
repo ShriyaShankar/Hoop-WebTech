@@ -68,7 +68,7 @@
             }
 
             // Query to select respective fields from the table
-            $sql = "SELECT ID, Sport, Host, StartDate, EndDate FROM host_tournament";
+            $sql = "SELECT * FROM host_tournament";
             $result = $conn->query($sql);
             
             echo '<table border="0" cellspacing="2" cellpadding="2"> 
@@ -79,6 +79,11 @@
                     <td> <font face="Arial"><b>Sport</font> </td> 
                     <td> <font face="Arial"><b>Start Date</font> </td> 
                     <td> <font face="Arial"><b>End Date</font> </td>
+                    <td> <font face="Arial"><b>Tournament Name</font> </td>
+                    <td> <font face="Arial"><b>Venue</font> </td>
+                    <td> <font face="Arial"><b>Contact Name</font> </td>
+                    <td> <font face="Arial"><b>Contact Number</font> </td>
+
                 </tr>';
  
                 if ($result->num_rows > 0) {
@@ -88,13 +93,21 @@
                         $field3name = $row["Sport"];
                         $field4name = $row["StartDate"];
                         $field5name = $row["EndDate"];
-    
+                        $tournament_name=$row['tournament_name'];
+                        $tournament_venue=$row['tournament_venue'];
+                        $contact_name=$row['contact_name'];
+                        $contact_number=$row['contact_number'];
+                    
                         echo '<tr> 
                                 <td>'.$field1name.'</td> 
                                 <td>'.$field2name.'</td> 
                                 <td>'.$field3name.'</td>
                                 <td>'.$field4name.'</td> 
                                 <td>'.$field5name.'</td>
+                                <td>'.$tournament_name.'</td>
+                                <td>'.$tournament_venue.'</td>
+                                <td>'.$contact_name.'</td>
+                                <td>'.$contact_number.'</td>
                             </tr>';
                 }
                 $result->free();
