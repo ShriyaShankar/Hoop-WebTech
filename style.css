@@ -184,3 +184,15 @@ body.loggedin {
     background-attachment: fixed; 
     background-size: cover;
 }
+
+.header{
+    margin: auto;
+    width: auto;
+    background-attachment: fixed;
+    background-size: cover;
+    color: rgba(236, 226, 212, 0.945);
+    text-align: center;
+    font-family:cursive;
+    font-size:75px;
+    height: 150px;
+}
