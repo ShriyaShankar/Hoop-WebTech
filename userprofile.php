@@ -27,6 +27,19 @@ $stmt->close();
 <!DOCTYPE html>
 <html>
 	<head>
+	<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="main.css">
+        <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body id="body">
 	<ul id = "nav_bar">
     
 	<li class="navLi"><a id="nav1" href = "home.html">Home</a></li>
@@ -36,12 +49,6 @@ $stmt->close();
 	<li class="navLi" style="float:right"><a id = "nav3" href = "about.html">About/Contact Us</a></li>
  
   </ul>
-		<meta charset="utf-8">
-		<title>Profile Page</title>
-		<link href="main.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-	</head>
-	<body id="body">
 	
 		<div class="content">
 			<br><br><br>
